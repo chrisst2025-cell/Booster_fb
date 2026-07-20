@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FB AUTO REACT</title>
+    <link rel="icon" type="image/jpg" href="https://i.imgur.com/LYGQz6s.jpeg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("https://i.imgur.com/Yus9p8c.jpeg");
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #fff;
+            text-align: center;
+        }
+        
+        .container {
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+            padding: 20px;
+            width: 400px;
+            max-width: 100%;
+            margin: 20px;
+            /* Apply neon border animation */
+            animation: neon-border 5s infinite alternate;
+            border: 2px solid transparent; /* Initial border to define thickness */
+        }
+
+        @keyframes neon-border {
+            0% {
+                border-color: red;
+                box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red;
+            }
+            25% {
+                border-color: green;
+                box-shadow: 0 0 10px green, 0 0 20px green, 0 0 30px green;
+            }
+            50% {
+                border-color: blue;
+                box-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue;
+            }
+            75% {
+                border-color: yellow;
+                box-shadow: 0 0 10px yellow, 0 0 20px yellow, 0 0 30px yellow;
+            }
+            100% {
+                border-color: violet;
+                box-shadow: 0 0 10px violet, 0 0 20px violet, 0 0 30px violet;
+            }
+        }
+
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+
+        h1 {
+            color: #ffa500;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            color: #fff;
+        }
+
+        input, select {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #ffa500;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background-color: #ff7f00;
+        }
+
+        #response {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        .success {
+            color: green;
+        }
+
+        .reaction {
+            font-size: 24px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .info-box {
+            background-color: rgba(255,255,255,0.2);
+            border: 1px solid #ffa500;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .info-box h2 {
+            color: #ffa500;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            color: #fff;
+            margin: 5px 0;
+        }
+
+        .cokie, .sms, .fb-link a {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #ffa500;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .cokie:hover, .sms:hover, .fb-link a:hover {
+            background-color: #ff7f00;
+        }
+
+        .sms {
+            cursor: pointer;
+            border: none;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FB AUTO REACT</h1>
+        <form id="reactForm">
+            <label for="link">Post Link:</label>
+            <input type="text" id="link" name="link" required>
+            
+            <label for="type">React Type:</label>
+            <select id="type" name="type" required>
+                <option value="LIKE">👍 LIKE</option>
+                <option value="LOVE">❤️ LOVE</option>
+                <option value="CARE">🥰 CARE</option>
+                <option value="HAHA">😂 HAHA</option>
+                <option value="WOW">😮 WOW</option>
+                <option value="SAD">😢 SAD</option>
+                <option value="ANGRY">😡 ANGRY</option>
+            </select>
+            
+            <label for="cookie">Cookie:</label>
+            <input type="text" id="cookie" name="cookie" required>
+            
+            <button type="submit">Send Reaction</button>
+        </form>
+        <div id="response"></div>
+        <center>
+        <a href="cokie.html" class="cokie">COKIE GETTER</a>
+        <button class="sms" onclick="window.location.href='https://sms-bomber.glitch.me/'">SMS BOMBER</button>
+        </center>
+        <div class="info-box">
+            <p>Version: 2.0</p>
+            <p>Welcome to the facebook auto reaction Modified by Bert Dev This tool allows you to send reactions to fb posts</p>
+            <h2>HOW TO USE</h2>
+            <p>➡️USE  FB ACCOUNT</p>
+            <p>➡️GET THE COKIE OF ACCOUNT</p>
+            <p>➡️GET A COKIE ON KIWI EXTENSION</p>
+            <p>➡️USE COKIE DOUGH ENTENSION</p>
+            <p>➡️WAIT FOR MORE UPDATE...</p>
+        </div>
+        <center>
+        <div class="fb-link">
+            <p>visit the developer and message to report any bug's you encountered</p>
+            <a href="https://www.facebook.com/profile.php?id=100085903897787" target="_blank">DEVELOPER FACEBOOK</a>
+        </div>
+        </center>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script>
+        document.getElementById('reactForm').addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const link = document.getElementById('link').value;
+            const type = document.getElementById('type').value;
+            const cookie = document.getElementById('cookie').value;
+
+            const responseElement = document.getElementById('response');
+            responseElement.textContent = 'Sending reaction...';
+            responseElement.className = '';
+
+            try {
+                const response = await fetch('/sendreact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ link, type, cookie })
+                });
+
+                const result = await response.json();
+                if (result.error) {
+                    responseElement.textContent = `Error: ${result.error}`;
+                    responseElement.className = 'error';
+                } else if (result.cookieError) {
+                    responseElement.textContent = 'Invalid cookie. Please check your cookie and try again.';
+                    responseElement.className = 'error';
+                } else {
+                    responseElement.textContent = result.message;
+                    responseElement.className = 'success';
+                }
+            } catch (error) {
+                responseElement.textContent = 'An error occurred while sending the reaction. Please try again later.';
+                responseElement.className = 'error';
+            }
+        });
+        window.onload = function() {
+            Swal.fire({
+                title: 'FB AUTO REACT!',
+                text: 'welcome to our auto fb react version 2.0 please enjoy this website',
+                imageUrl: 'https://i.imgur.com/RU8er1E.png',
+                imageWidth: 90,
+                imageHeight: 90,
+                imageAlt: 'Custom Logo',
+                footer: 'Modified by Bert Dev',
+                confirmButtonText: 'OK'
+            });
+        }
+    </script>
+</body>
+</html>
